@@ -11,4 +11,16 @@ def char_count(book_string):
         else:
             characters[char] = 1
     return characters
-    ## characters["x"] += 1
+
+def sort_on(dict):
+    return dict["Number"]
+
+def sorted_char_count(char_dict):
+    char_count_list = []
+    for letter in char_dict:
+        if letter.isalpha():
+            number = char_dict[letter]
+            char_count_list.append({"Letter" : letter, "Number" : number})
+    char_count_list.sort(reverse=True, key=sort_on)
+    return char_count_list
+
